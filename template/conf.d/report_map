@@ -1,0 +1,16 @@
+map $status $report_loggable {
+    "200"  1;
+    "201"  1;
+    default 0;
+}
+
+map $content_type $csp_bad_content_type {
+    default 1;
+    "application/json" 0;
+    "application/csp-report" 0;
+}
+
+map $content_type $hpkp_bad_content_type {
+    default 1;
+    "application/json" 0;
+}

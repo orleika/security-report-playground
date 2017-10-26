@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  nginx:
+    image: orleika/nginx
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/letsencrypt:/etc/ssl/letsencrypt:ro
+      - $PWD/conf.d:/etc/nginx/conf.d:ro
+      - $PWD/sites-enabled:/etc/nginx/sites-enabled:ro
+      - $PWD/hpkp.cf/public:/usr/share/nginx/hpkp.cf/public:ro
+      - $PWD/invalid.hpkp.cf/public:/usr/share/nginx/invalid.hpkp.cf/public:ro
+      - $PWD/log:/var/log/nginx

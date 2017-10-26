@@ -1,0 +1,2 @@
+log_format csp_report '[$time_local] $remote_addr "$http_referer" "$http_user_agent" $request_body';
+log_format hpkp_report '[$time_local] $remote_addr "$http_referer" "$http_user_agent" $request_body';

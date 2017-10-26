@@ -1,0 +1,12 @@
+# https://www.owasp.org/index.php/List_of_useful_HTTP_headers
+
+add_header X-Frame-Options SAMEORIGIN;
+
+add_header X-XSS-Protection "1; mode=block";
+
+add_header X-Content-Type-Options nosniff;
+
+add_header Content-Security-Policy-Report-Only "default-src 'self'; report-uri https://report.hpkp.ga/csp/reportOnly;";
+
+#add_header Content-Security-Policy-Report-Only "default-src 'self'; report-uri https://report.hpkp.ga/csp/enforce;";
+
